@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Aplikacja monitor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+
+
+  <ion-grid>
+
+    <div>
+      Stoper:
+    </div>
+    <div>
+      Zegar: {{ myDate | date: "dd/MM/yyy HH:mm:ss"}}
+    </div>
+    <ion-row *ngFor="let item of data; index as i">
+      <!-- <ion-col size="1">{{ i+ 1 }}</ion-col>
+      <ion-col size="3"> {{ item.name }}</ion-col>
+      <ion-col size="3"> {{ item.company }}</ion-col> -->
+      <div *ngIf="item.temperature">
+        Temperatura: {{ item.temperature }}
+      </div>
+      <div *ngIf="item.heartAction">
+        Akcja serca: {{ item.heartAction }}
+      </div>
+      <div *ngIf="item.energyChoosen">
+        Wybór Energii: {{ item.energyChoosen }}
+      </div>
+      <div *ngIf="item.so2">
+        SO2: {{ item.so2 }}
+      </div>
+      <div *ngIf="item.charging">
+        Ładowanie: {{ item.charging }}
+      </div>
+      <div *ngIf="item.etc02">
+        ETc02: {{ item.etc02 }}
+      </div>
+      <div *ngIf="item.discharge">
+        Wyładowanie: {{ item.discharge }}
+      </div>
+      <div *ngIf="item.pressure">
+        Ciśnienie: {{ item.pressure }}
+      </div>
+      <div *ngIf="item.ekg12">
+        EKG12: {{ item.ekg12 }}
+      </div>
+      <div *ngIf="item.medicalStudies">
+        Badania: {{ item.medicalStudies }}
+      </div>
+      <div *ngIf="item.breathNumber">
+        Liczba oddechów: {{ item.breathNumber }}
+      </div>
+      <div *ngIf="item.synchronization">
+        Synchronizacja: {{ item.synchronization }}
+      </div>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
