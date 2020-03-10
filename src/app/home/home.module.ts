@@ -6,14 +6,16 @@ import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 
-import { StoperComponent } from './../stoper/stoper.component';
-
+import { StoperComponent } from './../components/stoper/stoper.component';
+import { LineChartComponent } from './../components/line-chart/line-chart.component';
+import { GoogleChartsModule } from 'angular-google-charts';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    GoogleChartsModule,
     RouterModule.forChild([
       {
         path: '',
@@ -21,6 +23,6 @@ import { StoperComponent } from './../stoper/stoper.component';
       }
     ])
   ],
-  declarations: [HomePage, StoperComponent]
+  declarations: [HomePage, StoperComponent, LineChartComponent]
 })
 export class HomePageModule { }
