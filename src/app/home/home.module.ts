@@ -8,6 +8,7 @@ import { HomePage } from './home.page';
 
 import { StoperComponent } from './../components/stoper/stoper.component';
 import { LineChartComponent } from './../components/line-chart/line-chart.component';
+import { EkgChartComponent } from './../components/ekg-chart/ekg-chart.component';
 import { GoogleChartsModule } from 'angular-google-charts';
 
 @NgModule({
@@ -23,6 +24,6 @@ import { GoogleChartsModule } from 'angular-google-charts';
       }
     ])
   ],
-  declarations: [HomePage, StoperComponent, LineChartComponent]
+  declarations: [HomePage, StoperComponent, LineChartComponent, EkgChartComponent]
 })
 export class HomePageModule { }
