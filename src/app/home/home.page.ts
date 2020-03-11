@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { variables } from './../../assets/data/data';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
+  variables = variables
   data: any;
   now: any;
   public date: string = new Date().toISOString();
@@ -13,14 +15,14 @@ export class HomePage implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    fetch('./assets/data/data.ts').then(res => res.json())
-      .then(json => {
-        this.data = json;
+    // fetch('./assets/data/data.ts').then(res => res.json())
+    //   .then(json => {
+    //     this.data = json;
 
-        for (let item of this.data) {
-          console.log(item.company)
-        }
-      });
+    //     for (let item of this.data) {
+    //       console.log(item.company)
+    //     }
+    //   });
 
     setInterval(() => {         //replaced function() by ()=>
       this.myDate = new Date();

@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { HomePage } from './home.page';
 
 import { StoperComponent } from './../components/stoper/stoper.component';
-import { LineChartComponent } from './../components/line-chart/line-chart.component';
+import { LineChartComponent } from '../components/Spo2-chart/Spo2-chart.component';
 import { EkgChartComponent } from './../components/ekg-chart/ekg-chart.component';
 import { GoogleChartsModule } from 'angular-google-charts';
 

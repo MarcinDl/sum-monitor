@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { LineChartComponent } from './line-chart.component';
+import { LineChartComponent } from './Spo2-chart.component';
 
 describe('LineChartComponent', () => {
   let component: LineChartComponent;
@@ -9,7 +9,7 @@ describe('LineChartComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LineChartComponent ],
+      declarations: [LineChartComponent],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
