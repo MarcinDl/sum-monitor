@@ -5,12 +5,15 @@
 </ion-header>
 
 <ion-content padding>
-  <Spo2-chart></Spo2-chart>
-  <app-et-c02-chart></app-et-c02-chart>
-  <app-ekg-chart></app-ekg-chart>
+
+  <!-- <app-ekg-chart></app-ekg-chart> -->
   <ion-grid>
-    <div>
-    </div>
+    <ion-row>
+      <app-et-c02-chart></app-et-c02-chart>
+    </ion-row>
+    <ion-row>
+      <Spo2-chart></Spo2-chart>
+    </ion-row>
     <div>
       Stoper: <app-stoper></app-stoper>
     </div>
@@ -58,7 +61,6 @@
         Synchronizacja: {{ item.synchronization }}
       </div>
     </ion-row>
-
   </ion-grid>
 
 

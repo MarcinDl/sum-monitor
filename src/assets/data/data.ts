@@ -34,7 +34,7 @@ export const Spo2 = [
     ["11 sek", 13.9],
     ["12 sek", 9.6]
 
-    // gdyby było więcej wykresów na jednym
+    // gdyby było więcej wykresów na jednym - trzeba w pliku spo02-chart.component.ts i et-c02-chart.component.ts dodać więcej   columnNames = ["Liczba", "1"] elementów w tablicy; 
     // ["Jan", 7.0, -0.2, -0.9, 3.9],
     //   // ["Feb", 6.9, 0.8, 0.6, 4.2],
     //   // ["Mar", 9.5, 5.7, 3.5, 5.7],
@@ -59,7 +59,7 @@ export const EtC02 = [
     ["6 sek", 21.5],
     ["7 sek", 25.2],
     ["8 sek", 26.5],
-    ["9 sek", 23.3],
+    ["9 sek", 123.3],
     ["10 sek", 18.3],
     ["11 sek", 13.9],
     ["12 sek", 9.6]
