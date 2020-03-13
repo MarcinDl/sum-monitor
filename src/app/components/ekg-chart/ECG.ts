@@ -64,11 +64,14 @@ export class ECG {
         // P mimics a beta distribution
         var p = (x) => 2 * Math.pow(x, 3) * (1 - x);
         // Q mimics the -ve part of a sine wave
-        var q = (x) => -1 * Math.pow(1.1, Math.sin(x, Math.PI)) + 1;
+        // var q = (x) => -1 * Math.pow(1.1, Math.sin(x, Math.PI)) + 1;
+        var q = (x) => -1 * Math.pow(1.1, Math.sin(x)) + 1;
         // R mimics the +ve part of a skewed sine wave
-        var r = (x) => Math.pow(7, Math.sin(x, Math.PI)) - 1;
+        // var r = (x) => Math.pow(7, Math.sin(x, Math.PI)) - 1;
+        var r = (x) => Math.pow(7, Math.sin(x)) - 1;
         // S mimics the -ve part of a skewed sine wave
-        var s = (x) => -1 * Math.pow(1.5, Math.sin(x, Math.PI)) + 1;
+        // var s = (x) => -1 * Math.pow(1.5, Math.sin(x, Math.PI)) + 1;
+        var s = (x) => -1 * Math.pow(1.5, Math.sin(x)) + 1;
         // T mimics a beta distribution
         var t = (x) => 5 * Math.pow(x, 2) * (1 - x);
         // pq, st, and tp segments mimic y=0

@@ -18,6 +18,10 @@ export class EkgChartComponent implements OnInit {
 
 
   ////////////////////////////
+  public PQRST_WAVE_WIDTH_RATIOS;
+  public norm_array;
+  public data_cursor;
+  public data_buffer
 
   public MAX_X = 12;
   public MAX_Y = 5;
@@ -31,7 +35,7 @@ export class EkgChartComponent implements OnInit {
   public height = +this.svg.attr("height");
   public g = this.svg.append("g");
 
-  public ecg = new ECG();
+  public ecg = new ECG(this.PQRST_WAVE_WIDTH_RATIOS, this.norm_array, this.data_cursor, this.data_buffer);
   public data = [];
 
   public x = d3.scaleLinear()
@@ -158,11 +162,11 @@ export class EkgChartComponent implements OnInit {
     // update the data
     var update_datum = (new_x, new_y) => {
       if (new_x % this.MAX_X / this.ecg.getStepSize() >= this.data.length)
-        this.data.push(new Point(new_x, new_y));
-      // this.data.push(this.Point(new_x, new_y));
+        // this.data.push(new Point(new_x, new_y));
+        this.data.push(this.Point(new_x, new_y));
       else
-        this.data[new_x / this.ecg.getStepSize()] = new Point(new_x, new_y);
-      // this.data[new_x / this.ecg.getStepSize()] = this.Point(new_x, new_y);
+        // this.data[new_x / this.ecg.getStepSize()] = new Point(new_x, new_y);
+        this.data[new_x / this.ecg.getStepSize()] = this.Point(new_x, new_y);
     };
 
     var new_datum = this.ecg.tick();
