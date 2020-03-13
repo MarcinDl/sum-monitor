@@ -10,7 +10,8 @@ import { ECG } from "./ECG"
 
 export class EkgChartComponent implements OnInit {
 
-  constructor() {  // // A Simple Point in Euclidean Space
+  constructor(Point) {
+    this.Point = Point; // // A Simple Point in Euclidean Space
   }
 
   ngOnInit() { }

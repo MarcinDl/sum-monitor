@@ -1,22 +1,39 @@
 export class ECG {
-    constructor() {
+    constructor(PQRST_WAVE_WIDTH_RATIOS, norm_array, data_cursor, data_buffer) {
+
+        this.PQRST_WAVE_WIDTH_RATIOS = PQRST_WAVE_WIDTH_RATIOS;
+        this.norm_array = norm_array;
+        this.data_cursor = data_cursor;
+        this.data_buffer = data_buffer;
+        // this.PQRST_WAVE_WIDTH_RATIOS = PQRST_WAVE_WIDTH_RATIOS;
         // The width ratios allows for the normalization of the widths of the
         // different segments of the pqrst wave.
-        this.PQRST_WAVE_WIDTH_RATIOS = {
-            p: 12,
-            pq: 2,
-            q: 2,
-            r: 6,
-            s: 3,
-            st: 2,
-            t: 12,
-            tp: 2
-        };
 
-        this.norm_array = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9];
-        this.data_cursor = 0;
-        this.data_buffer = [];
+
+
     }
+    extObjectValues(obj) {
+        if (typeof obj.values === 'undefined') {
+            return Object.keys(obj).map(key => obj[key])
+        }
+
+        return obj.values();
+    }
+
+    public PQRST_WAVE_WIDTH_RATIOS = {
+        p: 12,
+        pq: 2,
+        q: 2,
+        r: 6,
+        s: 3,
+        st: 2,
+        t: 12,
+        tp: 2
+    };
+    public Math: Math;
+    public norm_array = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9];
+    public data_cursor = 0;
+    public data_buffer = [];
 
     getDataCursor() {
         return this.data_cursor;
@@ -69,7 +86,7 @@ export class ECG {
         var tp_y = this.norm_array.map(zero_segment);
 
         // map normalized domain (0.0-1.0) to absolute domain
-        var sum_width_ratios = extObjectValues(this.PQRST_WAVE_WIDTH_RATIOS).reduce((acc, x) => {
+        var sum_width_ratios = this.extObjectValues(this.PQRST_WAVE_WIDTH_RATIOS).reduce((acc, x) => {
             return acc + x;
         }, 0.0);
 
